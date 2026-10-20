@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2a0845" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌴</text></svg>"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dev City | Selecione o seu Personagem</title>
+  </head>
+  <body>
+    <main class="palco">
+      <p class="nome" id="nome">Lucia</p>
+      <img
+        class="personagem"
+        id="personagem"
+        src="./img/lucia.png"
+        alt="Lucia"
+      />
+    </main>
+
+    <div class="textos">
+      <p class="selecionar">Selecione o seu Personagem</p>
+      <h1>
+        Não é só <br />
+        um jogo.
+      </h1>
+      <p class="texto-apoio">
+        Escolha uma lenda de Dev City. Ou tire uma selfie e vire uma.
+      </p>
+    </div>
+
+    <nav class="menu" id="menu" aria-label="Personagens">
+      <button
+        class="avatar-btn ativo"
+        data-nome="Lucia"
+        data-img="img/lucia.png"
+        data-cor="#ff3cac"
+        aria-label="Escolher Lucia"
+        aria-pressed="true"
+      >
+        <img class="avatar" src="img/lucia.png" alt="" />
+      </button>
+
+      <button
+        class="avatar-btn"
+        data-nome="Jason"
+        data-img="img/jason.png"
+        data-cor="#00b2c9"
+        aria-label="Escolher Jason"
+        aria-pressed="false"
+      >
+        <img class="avatar" src="img/jason.png" alt="" />
+      </button>
+
+      <button
+        class="avatar-btn"
+        data-nome="CJ"
+        data-img="img/cj.png"
+        data-cor="#7ed37e"
+        aria-label="Escolher CJ"
+        aria-pressed="false"
+      >
+        <img class="avatar" src="img/cj.png" alt="" />
+      </button>
+
+      <button
+        class="you"
+        id="btn-selfie"
+        aria-label="Tirar selfie e criar meu personagem"
+      >
+        📷
+      </button>
+    </nav>
+
+    <dialog class="modal" id="modal-selfie" aria-labelledby="modal-titulo">
+      <h2 id="modal-titulo">Vire uma lenda</h2>
+      <p class="modal-sub" id="modal-aviso">
+        Enquadre o rosto e capture. Vamos transformar em arte de quadrinhos.
+      </p>
+
+      <div class="moldura">
+        <video id="video" autoplay playsinline muted></video>
+        <img id="previa" alt="Prévia do seu personagem" hidden />
+        <div class="guia" id="guia" aria-hidden="true"></div>
+      </div>
+
+      <label class="campo">
+        Nome do personagem
+        <input
+          id="campo-nome"
+          type="text"
+          maxlength="12"
+          placeholder="VOCÊ"
+          autocomplete="off"
+        />
+      </label>
+
+      <div class="modal-acoes">
+        <button class="btn btn-primario" id="btn-capturar">Capturar</button>
+        <button class="btn btn-primario" id="btn-usar" hidden>
+          Usar personagem
+        </button>
+        <button class="btn" id="btn-refazer" hidden>Refazer</button>
+        <label class="btn" id="btn-upload">
+          Enviar foto
+          <input id="arquivo" type="file" accept="image/*" hidden />
+        </label>
+        <button class="btn btn-fechar" id="btn-cancelar">Cancelar</button>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
